@@ -1,0 +1,6 @@
+[submodule "split-api-node-ts"]
+	path = split-api-node-ts
+	url = git@github.com:jonathan-lee-devel/split-api-node-ts.git
+[submodule "split-client-angular-ts"]
+	path = split-client-angular-ts
+	url = git@github.com:jonathan-lee-devel/split-client-angular-ts.git
