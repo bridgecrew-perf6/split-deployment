@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: api-deployment
+
+spec:
+  replicas: 3
+
+  selector:
+    matchLabels:
+      server: api-deployment
+
+  template:
+    metadata:
+      labels:
+        server: api-deployment
+    spec:
+      containers:
+        - name: split-api
+          image: jonathanleedev/split-api:latest
+          ports:
+            - containerPort: 3000
+          env:
+            - name: SESSION_SECRET
+              value: keyboardcat
+            - name: BACK_END_URL
+              value: https://api.split.jonathanlee.io/api
+            - name: FRONT_END_URL
+              value: https://split.jonathanlee.io
+  # TODO add other environment variables and work out secrets
